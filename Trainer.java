@@ -3,11 +3,18 @@ import java.util.*;
 public class Trainer{
     private ArrayList<Pokemon> bag;
     private Scanner sc;
+    private String name;
 
-    public Trainer(){
+    public Trainer(String name){
          bag = new ArrayList<Pokemon>();
          bag.add(new Pikachu("Pikachu of Satochi "));
-         sc = new Scanner(System.in);        
+         sc = new Scanner(System.in); 
+         
+         this.name = name;
+    }
+
+    public String getName(){
+        return this.name;
     }
     public void play(){
         String cmd = "";
