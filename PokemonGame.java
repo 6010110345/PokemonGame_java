@@ -7,7 +7,6 @@ public class PokemonGame{
         System.out.println("End Pokemon Game ");
 
       
-
         
     }
 }
