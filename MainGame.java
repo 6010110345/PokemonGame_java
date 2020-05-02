@@ -16,10 +16,12 @@ public class MainGame extends JFrame
         JLabel pokemonName = new JLabel();
 
         JButton firstPokemon = new JButton(trainer.getBag().get(0).getName() + "Status");
+        JButton pokemon2 = new JButton( "Food");
 
         c.add(trainerNameLabel);
         c.add(pokemonName);
         c.add(firstPokemon);
+        c.add(pokemon2);
 
         c.setLayout(new BoxLayout(c, BoxLayout.Y_AXIS));
 
@@ -31,6 +33,12 @@ public class MainGame extends JFrame
 
         firstPokemon.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+                PokemonStatus ps = new PokemonStatus(trainer.getBag().get(0));
+            }
+        });
+
+        pokemon2.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent d){
                 PokemonStatus ps = new PokemonStatus(trainer.getBag().get(0));
             }
         });
