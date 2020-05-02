@@ -12,8 +12,29 @@ public class MainGame extends JFrame
 
         
         Container c = getContentPane();
-        JLabel trainerNameLabel = new JLabel();
+        JLabel trainerNameLabel = new JLabel(this.trainer.getName());
+        JLabel pokemonName = new JLabel();
+
+        JButton firstPokemon = new JButton(trainer.getBag().get(0).getName() + "Status");
+
         c.add(trainerNameLabel);
+        c.add(pokemonName);
+        c.add(firstPokemon);
+
+        c.setLayout(new BoxLayout(c, BoxLayout.Y_AXIS));
+
+        String pName = "Pokemon: ";
+        for(Pokemon p: trainer.getBag()){
+            pName += p.getName() + ", ";
+        }
+        pokemonName.setText(pName);
+
+        firstPokemon.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                PokemonStatus ps = new PokemonStatus(trainer.getBag().get(0));
+            }
+        });
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 200);
         setVisible(true);

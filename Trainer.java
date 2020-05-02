@@ -94,5 +94,9 @@ public class Trainer{
             number++;
         }
     }
+    public ArrayList<Pokemon> getBag(){
+        return bag;
+    }
+     
 }
 
